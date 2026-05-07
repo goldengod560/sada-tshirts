@@ -164,32 +164,23 @@ p { margin: 0 0 1rem; }
 .logo-pill {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  background: var(--text);
-  height: 40px !important;
-  width: 90px !important;
-  padding: 6px 10px;
-  border-radius: 4px;
-  overflow: hidden;
+  height: 44px !important;
   flex-shrink: 0;
-  box-sizing: border-box;
   transition: transform var(--transition);
 }
 .logo-pill img {
-  height: 28px !important;
+  height: 44px !important;
   width: auto !important;
-  max-width: 100% !important;
+  max-width: 160px !important;
   display: block;
   object-fit: contain;
 }
 .logo:hover .logo-pill { transform: scale(1.02); }
 
 .logo-pill-sm {
-  height: 32px !important;
-  width: 72px !important;
-  padding: 5px 8px;
+  height: 36px !important;
 }
-.logo-pill-sm img { height: 22px !important; }
+.logo-pill-sm img { height: 36px !important; max-width: 130px !important; }
 
 .logo-thin {
   font-weight: 500;
