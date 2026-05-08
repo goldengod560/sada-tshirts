@@ -291,6 +291,14 @@ p { margin: 0 0 1rem; }
 
 .hero-image { position: relative; }
 
+.hero-photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  display: block;
+}
+
 .hero-tag {
   position: absolute;
   top: 16px; left: 16px;
