@@ -16,6 +16,12 @@
     var yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+    /* ---------- Product carousel: reset to first card on load ---------- */
+    var productGrid = document.querySelector('.product-grid');
+    if (productGrid) {
+      productGrid.scrollLeft = 0;
+    }
+
     /* ---------- Mobile menu ---------- */
     var menuToggle = document.getElementById('menuToggle');
     var nav = document.getElementById('primaryNav');

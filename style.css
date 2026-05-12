@@ -940,6 +940,7 @@ p { margin: 0 0 1rem; }
     gap: 16px;
     padding: 4px var(--gutter) 20px;
     margin: 0 calc(-1 * var(--gutter));
+    scroll-padding-left: var(--gutter);
     scrollbar-width: none;
     -ms-overflow-style: none;
     touch-action: pan-x pan-y;
@@ -952,6 +953,7 @@ p { margin: 0 0 1rem; }
     scroll-snap-align: start;
     min-width: 0;
   }
+  .product-card:first-child { scroll-snap-align: start; }
 
   /* Shrink product image on mobile so cards don't fill entire screen */
   .product-photo {
