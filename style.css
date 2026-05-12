@@ -935,15 +935,16 @@ p { margin: 0 0 1rem; }
     grid-template-columns: none !important;
     overflow-x: auto;
     overflow-y: hidden;
-    scroll-snap-type: x mandatory;
+    scroll-snap-type: x proximity;
     -webkit-overflow-scrolling: touch;
     gap: 16px;
     padding: 4px var(--gutter) 20px;
     margin: 0 calc(-1 * var(--gutter));
-    scroll-padding-left: var(--gutter);
+    scroll-padding: 0 var(--gutter);
     scrollbar-width: none;
     -ms-overflow-style: none;
     touch-action: pan-x pan-y;
+    scroll-behavior: auto;
   }
   .product-grid::-webkit-scrollbar { display: none; height: 0; }
 
@@ -953,7 +954,6 @@ p { margin: 0 0 1rem; }
     scroll-snap-align: start;
     min-width: 0;
   }
-  .product-card:first-child { scroll-snap-align: start; }
 
   /* Shrink product image on mobile so cards don't fill entire screen */
   .product-photo {

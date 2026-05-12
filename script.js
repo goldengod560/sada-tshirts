@@ -16,10 +16,23 @@
     var yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    /* ---------- Product carousel: reset to first card on load ---------- */
+    /* ---------- Product carousel: ensure it starts at first card ---------- */
     var productGrid = document.querySelector('.product-grid');
     if (productGrid) {
+      // Reset on initial load
       productGrid.scrollLeft = 0;
+
+      // Reset after page fully loaded (images, fonts, etc.)
+      window.addEventListener('load', function () {
+        productGrid.scrollLeft = 0;
+      });
+
+      // Reset when "Products" link is clicked
+      document.querySelectorAll('a[href="#products"], a[href*="#products"]').forEach(function (link) {
+        link.addEventListener('click', function () {
+          setTimeout(function () { productGrid.scrollLeft = 0; }, 50);
+        });
+      });
     }
 
     /* ---------- Mobile menu ---------- */
