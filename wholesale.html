@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wholesale Inquiry — Sada T-Shirts</title>
+  <meta name="description" content="Wholesale inquiries for Sada T-Shirts. Submit your information and resale certificate." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="Sada T-Shirts home">
+        <span class="logo-pill">
+          <img src="images/sada-logo.png" alt="Sada T-Shirts" />
+        </span>
+      </a>
+
+      <nav class="nav" id="primaryNav" aria-label="Primary">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#products">Products</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#where">Where to Buy</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="https://bureen.com" target="_blank" rel="noopener" class="btn btn-dark btn-sm">Buy Online</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- WHOLESALE FORM -->
+  <section class="section">
+    <div class="container wholesale-wrap">
+      <div class="wholesale-head">
+        <p class="eyebrow">Wholesale</p>
+        <h1 class="wholesale-title">Wholesale Inquiry.</h1>
+        <p class="wholesale-intro">Fill out the form below to start a wholesale relationship with Sada T-Shirts. We'll be in touch within 2 business days.</p>
+      </div>
+
+      <form
+        action="https://formspree.io/f/xjgllnzq"
+        method="POST"
+        enctype="multipart/form-data"
+        class="wholesale-form"
+        id="wholesaleForm"
+      >
+        <!-- Formspree config: custom email subject + reply-to wholesaler -->
+        <input type="hidden" name="_subject" value="New Sada Wholesale Inquiry">
+        <input type="hidden" name="_replyto" value="" id="_replyto">
+
+        <h3 class="form-section-title">Business Information</h3>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="business_name">Business / Store Name <span class="required">*</span></label>
+            <input type="text" id="business_name" name="business_name" required>
+          </div>
+          <div class="form-field">
+            <label for="business_type">Business Type <span class="required">*</span></label>
+            <select id="business_type" name="business_type" required>
+              <option value="">Select one...</option>
+              <option value="Retail Store">Retail Store</option>
+              <option value="Online Store">Online Store</option>
+              <option value="Boutique">Boutique</option>
+              <option value="Distributor">Distributor</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="years_in_business">Years in Business</label>
+            <input type="text" id="years_in_business" name="years_in_business">
+          </div>
+          <div class="form-field">
+            <label for="website">Website</label>
+            <input type="url" id="website" name="website" placeholder="https://">
+          </div>
+        </div>
+
+        <h3 class="form-section-title">Contact Information</h3>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="contact_name">Your Name <span class="required">*</span></label>
+            <input type="text" id="contact_name" name="contact_name" required>
+          </div>
+          <div class="form-field">
+            <label for="title">Title / Role</label>
+            <input type="text" id="title" name="title" placeholder="Owner, Buyer, etc.">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="email">Email <span class="required">*</span></label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-field">
+            <label for="phone">Phone <span class="required">*</span></label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+        </div>
+
+        <h3 class="form-section-title">Business Address</h3>
+
+        <div class="form-field">
+          <label for="street">Street Address <span class="required">*</span></label>
+          <input type="text" id="street" name="street" required>
+        </div>
+
+        <div class="form-row form-row-3">
+          <div class="form-field">
+            <label for="city">City <span class="required">*</span></label>
+            <input type="text" id="city" name="city" required>
+          </div>
+          <div class="form-field">
+            <label for="state">State <span class="required">*</span></label>
+            <input type="text" id="state" name="state" required>
+          </div>
+          <div class="form-field">
+            <label for="zip">ZIP Code <span class="required">*</span></label>
+            <input type="text" id="zip" name="zip" required>
+          </div>
+        </div>
+
+        <h3 class="form-section-title">Order Details</h3>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="products_interested">Products Interested In <span class="required">*</span></label>
+            <select id="products_interested" name="products_interested" required>
+              <option value="">Select one...</option>
+              <option value="All Products">All Products</option>
+              <option value="Crew Neck">Crew Neck T-Shirts</option>
+              <option value="V-Neck">V-Neck T-Shirts</option>
+              <option value="Tank Tops">Tank Tops</option>
+              <option value="Thermals">Thermals</option>
+              <option value="Long Sleeve">Long Sleeve T-Shirts</option>
+              <option value="Kids">Kids T-Shirts</option>
+              <option value="Multiple">Multiple (specify in notes)</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="estimated_quantity">Estimated Order Quantity <span class="required">*</span></label>
+            <select id="estimated_quantity" name="estimated_quantity" required>
+              <option value="">Select one...</option>
+              <option value="Under 100">Under 100 units</option>
+              <option value="100-500">100–500 units</option>
+              <option value="500-1000">500–1,000 units</option>
+              <option value="1000-5000">1,000–5,000 units</option>
+              <option value="5000+">5,000+ units</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="notes">Additional Notes</label>
+          <textarea id="notes" name="notes" rows="5" placeholder="Tell us anything else relevant — preferred colors, sizing needs, timeline, etc."></textarea>
+        </div>
+
+        <h3 class="form-section-title">Resale Certificate</h3>
+        <p class="form-help">Required for wholesale pricing. Upload a PDF or image of your resale / sales tax certificate.</p>
+
+        <div class="form-field">
+          <label for="resale_cert" class="file-label">
+            <span class="file-button">Choose File</span>
+            <span class="file-name" id="fileName">No file selected</span>
+          </label>
+          <input type="file" id="resale_cert" name="resale_cert" accept=".pdf,.jpg,.jpeg,.png" required>
+        </div>
+
+        <div class="form-submit">
+          <button type="submit" class="btn btn-dark">Submit Inquiry</button>
+          <p class="form-note">We'll respond within 2 business days.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-pill logo-pill-sm">
+          <img src="images/sada-logo.png" alt="Sada T-Shirts" />
+        </span>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="index.html#products">Products</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#where">Where to Buy</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="https://bureen.com" target="_blank" rel="noopener">Buy Online</a>
+      </nav>
+      <p class="footer-copy">© <span id="year"></span> Sada T-Shirts. Everyday basics, made simple.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Show selected filename for resale certificate
+    document.getElementById('resale_cert').addEventListener('change', function(e) {
+      var name = e.target.files[0] ? e.target.files[0].name : 'No file selected';
+      document.getElementById('fileName').textContent = name;
+    });
+
+    // Auto-fill reply-to with wholesaler's email so you can reply directly
+    document.getElementById('email').addEventListener('input', function(e) {
+      document.getElementById('_replyto').value = e.target.value;
+    });
+  </script>
+</body>
+</html>
