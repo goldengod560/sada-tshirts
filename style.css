@@ -894,40 +894,43 @@ p { margin: 0 0 1rem; }
 
   .menu-toggle { display: inline-flex; }
 
-  .hero-grid { grid-template-columns: 1fr; }
-  .hero-copy { display: contents; }
-  .hero-copy .eyebrow { order: 1; }
-  .hero-heading { order: 2; }
-  .hero-copy .lede { order: 3; }
-  .hero-ctas { order: 4; }
-  .hero-image {
-    order: 5 !important;
-    margin: 1.5rem 0 0;
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
-  .hero-placeholder { aspect-ratio: 1/1; }
-
-  .hero-copy { text-align: center !important; }
-  .hero-copy .eyebrow { text-align: center !important; }
+  .hero-copy {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    order: 1;
+  }
+  .hero-image {
+    order: 2;
+    margin-top: 0;
+  }
+  .hero-copy .eyebrow { text-align: center; }
   .hero-copy .lede {
-    margin-left: auto !important;
-    margin-right: auto !important;
-    text-align: center !important;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
   }
   .hero-ctas {
-    justify-content: center !important;
-    align-items: center !important;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
   }
-
   .hero-heading {
-    align-items: center !important;
-    text-align: center !important;
+    align-items: center;
+    text-align: center;
   }
-  .hero-heading-text { text-align: center !important; }
+  .hero-heading-text { text-align: center; }
   .hero-logo {
-    width: 100% !important;
-    max-width: 460px !important;
-    margin: 0 auto !important;
+    width: 100%;
+    max-width: 460px;
+    margin: 0 auto;
   }
+  .hero-placeholder { aspect-ratio: 1/1; }
 
   .about-grid { grid-template-columns: 1fr; }
   .about-image { max-width: 420px; }
