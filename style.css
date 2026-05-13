@@ -942,35 +942,18 @@ p { margin: 0 0 1rem; }
   .where-meta { grid-template-columns: 1fr; gap: 18px; text-align: center; }
 }
 
-/* --- Product carousel: ONLY on phones (not tablets) --- */
+/* --- Product layout on phones: single column, NO carousel --- */
 @media (max-width: 700px) {
   .product-grid {
-    display: flex !important;
-    grid-template-columns: none !important;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    gap: 16px;
-    padding: 4px var(--gutter) 20px;
-    margin: 0 calc(-1 * var(--gutter));
-    scroll-padding: 0 var(--gutter);
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    touch-action: pan-x pan-y;
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
-  .product-grid::-webkit-scrollbar { display: none; height: 0; }
 
   .product-card {
-    flex: 0 0 80%;
-    width: 80%;
-    scroll-snap-align: start;
-    min-width: 0;
     flex-direction: column-reverse;
   }
-  .product-card:last-child { margin-right: var(--gutter); }
 
-  /* Flipped order: image is now at bottom, so border goes on top */
+  /* Image is below text, so divider goes on TOP of image */
   .product-card .product-photo,
   .product-card .image-placeholder {
     border-bottom: none;
@@ -979,7 +962,6 @@ p { margin: 0 0 1rem; }
 
   .product-photo {
     aspect-ratio: 1/1;
-    max-height: 50vh;
   }
   .product-placeholder { aspect-ratio: 1/1; }
 }
