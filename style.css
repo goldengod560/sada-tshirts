@@ -495,6 +495,48 @@ p { margin: 0 0 1rem; }
   letter-spacing: 0.02em;
 }
 
+.about-since {
+  margin: 18px 0 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--text);
+  text-align: center;
+}
+
+/* ---------- Wholesale CTA Strip ---------- */
+.wholesale-strip {
+  background: var(--bg-alt, #f5f3ef);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: clamp(32px, 5vw, 56px) 0;
+}
+.wholesale-strip-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.wholesale-strip-copy { flex: 1 1 360px; }
+.wholesale-strip-copy h3 {
+  margin: 8px 0 6px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+.wholesale-strip-copy p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  max-width: 520px;
+}
+.wholesale-strip .btn { flex: 0 0 auto; }
+
 /* ---------- Colors ---------- */
 .color-grid {
   display: grid;
@@ -940,6 +982,14 @@ p { margin: 0 0 1rem; }
   .contact-block { padding-top: 16px; }
 
   .where-meta { grid-template-columns: 1fr; gap: 18px; text-align: center; }
+
+  .wholesale-strip-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 18px;
+  }
+  .wholesale-strip .btn { width: 100%; text-align: center; }
 }
 
 /* --- Product layout on phones: 2-column grid, NO carousel --- */
