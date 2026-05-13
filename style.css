@@ -942,11 +942,11 @@ p { margin: 0 0 1rem; }
   .where-meta { grid-template-columns: 1fr; gap: 18px; text-align: center; }
 }
 
-/* --- Product layout on phones: single column, NO carousel --- */
+/* --- Product layout on phones: 2-column grid, NO carousel --- */
 @media (max-width: 700px) {
   .product-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
   }
 
   .product-card {
@@ -964,6 +964,11 @@ p { margin: 0 0 1rem; }
     aspect-ratio: 1/1;
   }
   .product-placeholder { aspect-ratio: 1/1; }
+
+  /* Shrink card text a touch so 2-up reads cleanly on small screens */
+  .product-body { padding: 14px; }
+  .product-body h3 { font-size: 1rem; }
+  .product-body p { font-size: 0.85rem; }
 }
 
 @media (max-width: 560px) {
