@@ -898,12 +898,12 @@ p { margin: 0 0 1rem; }
   .hero-copy { display: contents; }
   .hero-copy .eyebrow { order: 1; }
   .hero-heading { order: 2; }
+  .hero-copy .lede { order: 3; }
+  .hero-ctas { order: 4; }
   .hero-image {
-    order: 3 !important;
-    margin: 1rem 0;
+    order: 5 !important;
+    margin: 1.5rem 0 0;
   }
-  .hero-copy .lede { order: 4; }
-  .hero-ctas { order: 5; }
   .hero-placeholder { aspect-ratio: 1/1; }
 
   .hero-copy { text-align: center !important; }
