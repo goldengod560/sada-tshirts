@@ -8,7 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=9" />
+  <link rel="preload" as="image" href="images/hero.jpg" fetchpriority="high" />
+  <link rel="stylesheet" href="style.css?v=10" />
 </head>
 <body>
 
@@ -17,7 +18,7 @@
     <div class="container header-inner">
       <a href="#home" class="logo" aria-label="Sada T-Shirts home">
         <span class="logo-pill">
-          <img src="images/sada-logo.png" alt="Sada T-Shirts" />
+          <img src="images/sada-logo.png" alt="Sada T-Shirts" width="130" height="38" decoding="async" fetchpriority="high" />
         </span>
       </a>
 
@@ -44,7 +45,7 @@
       <div class="hero-copy">
         <p class="eyebrow">Since 2004</p>
         <h1 class="hero-heading">
-          <img src="images/sada-logo.png" alt="Sada" class="hero-logo" />
+          <img src="images/sada-logo.png" alt="Sada" class="hero-logo" width="460" height="190" decoding="async" fetchpriority="high" />
           <span class="hero-heading-text">T-Shirts</span>
         </h1>
         <p class="lede">Everyday plain t-shirts made for comfort, value, and daily wear.</p>
@@ -54,7 +55,7 @@
         </div>
       </div>
       <div class="hero-image">
-        <img src="images/hero.jpg" alt="Sada T-Shirts" class="hero-photo" />
+        <img src="images/hero.jpg" alt="Sada T-Shirts" class="hero-photo" width="800" height="800" decoding="async" fetchpriority="high" />
       </div>
     </div>
   </section>
@@ -90,7 +91,7 @@
 
       <div class="product-grid">
         <article class="product-card">
-          <img src="images/crew-neck.jpg" alt="Crew Neck T-Shirts" class="product-photo" />
+          <img src="images/crew-neck.jpg" alt="Crew Neck T-Shirts" class="product-photo" width="600" height="600" loading="lazy" decoding="async" />
           <div class="product-body">
             <h3>Crew Neck T-Shirts</h3>
             <p>The classic. Soft, breathable, and built for everyday rotation. Clean lines, true-to-size fit.</p>
@@ -98,7 +99,7 @@
         </article>
 
         <article class="product-card">
-          <img src="images/v-neck.jpg" alt="V-Neck T-Shirts" class="product-photo" />
+          <img src="images/v-neck.jpg" alt="V-Neck T-Shirts" class="product-photo" width="600" height="600" loading="lazy" decoding="async" />
           <div class="product-body">
             <h3>V-Neck T-Shirts</h3>
             <p>A subtle V, a relaxed shape. Lightweight cotton that layers easily under jackets and overshirts.</p>
@@ -106,7 +107,7 @@
         </article>
 
         <article class="product-card">
-          <img src="images/tank-top.jpg" alt="Tank Tops" class="product-photo" />
+          <img src="images/tank-top.jpg" alt="Tank Tops" class="product-photo" width="600" height="600" loading="lazy" decoding="async" />
           <div class="product-body">
             <h3>Tank Tops</h3>
             <p>Made for warm days and humid summers. Smooth ribbed knit, clean shoulder line, no fuss.</p>
@@ -114,7 +115,7 @@
         </article>
 
         <article class="product-card">
-          <img src="images/thermal.jpg" alt="Thermals" class="product-photo" />
+          <img src="images/thermal.jpg" alt="Thermals" class="product-photo" width="600" height="600" loading="lazy" decoding="async" />
           <div class="product-body">
             <h3>Thermals</h3>
             <p>Long sleeve waffle-knit warmth. A reliable layer when temperatures drop, day or night.</p>
@@ -122,7 +123,7 @@
         </article>
 
         <article class="product-card">
-          <img src="images/long-sleeve.jpg" alt="Long Sleeve T-Shirts" class="product-photo" />
+          <img src="images/long-sleeve.jpg" alt="Long Sleeve T-Shirts" class="product-photo" width="600" height="600" loading="lazy" decoding="async" />
           <div class="product-body">
             <h3>Long Sleeve T-Shirts</h3>
             <p>The everyday tee, extended. Smooth cotton with full-length sleeves for cooler days and easy layering.</p>
@@ -130,7 +131,7 @@
         </article>
 
         <article class="product-card">
-          <img src="images/kids.jpg" alt="Kids T-Shirts" class="product-photo" />
+          <img src="images/kids.jpg" alt="Kids T-Shirts" class="product-photo" width="600" height="600" loading="lazy" decoding="async" />
           <div class="product-body">
             <h3>Kids T-Shirts</h3>
             <p>The same Sada quality, sized for little ones. Soft, durable cotton built to handle every kind of day.</p>
@@ -156,7 +157,7 @@
   <section class="section section-alt" id="about">
     <div class="container about-grid">
       <div class="about-image">
-        <img src="images/about.jpg" alt="Sada T-Shirts" class="about-photo" />
+        <img src="images/about.jpg" alt="Sada T-Shirts" class="about-photo" width="700" height="840" loading="lazy" decoding="async" />
         <p class="about-since">Since 2004</p>
       </div>
       <div class="about-copy">
@@ -231,7 +232,7 @@
     <div class="container footer-inner">
       <div class="footer-brand">
         <span class="logo-pill logo-pill-sm">
-          <img src="images/sada-logo.png" alt="Sada T-Shirts" />
+          <img src="images/sada-logo.png" alt="Sada T-Shirts" width="130" height="38" loading="lazy" decoding="async" />
         </span>
       </div>
       <nav class="footer-nav" aria-label="Footer">

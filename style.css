@@ -443,6 +443,7 @@ p { margin: 0 0 1rem; }
   object-fit: cover;
   display: block;
   border-bottom: 1px solid var(--line);
+  background-color: #f0eee9;
 }
 
 .about-photo {
@@ -450,6 +451,7 @@ p { margin: 0 0 1rem; }
   aspect-ratio: 5/6;
   object-fit: cover;
   display: block;
+  background-color: #f0eee9;
 }
 
 .product-body {
