@@ -979,6 +979,13 @@ p { margin: 0 0 1rem; }
   .about-grid { grid-template-columns: 1fr; }
   .about-image { max-width: 420px; }
 
+  /* Show the full About image on mobile — no zoom/crop */
+  .about-photo {
+    aspect-ratio: auto !important;
+    height: auto !important;
+    object-fit: contain;
+  }
+
   .contact-grid { grid-template-columns: 1fr; }
   .contact-info { grid-template-columns: 1fr; gap: 12px; }
   .contact-block { padding-top: 16px; }
@@ -1021,15 +1028,26 @@ p { margin: 0 0 1rem; }
     border-top: 1px solid var(--line);
   }
 
+  /* Force square product images on mobile */
   .product-photo {
-    aspect-ratio: 1/1;
+    aspect-ratio: 1 / 1 !important;
+    height: auto !important;
+    width: 100% !important;
+    object-fit: cover;
   }
   .product-placeholder { aspect-ratio: 1/1; }
 
-  /* Shrink card text a touch so 2-up reads cleanly on small screens */
-  .product-body { padding: 14px; }
-  .product-body h3 { font-size: 1rem; }
-  .product-body p { font-size: 0.85rem; }
+  /* Names only — hide descriptions on mobile */
+  .product-body {
+    padding: 12px 14px;
+  }
+  .product-body h3 {
+    font-size: 0.95rem;
+    margin: 0;
+  }
+  .product-body p {
+    display: none;
+  }
 }
 
 @media (max-width: 560px) {
