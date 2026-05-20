@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Block known AI scrapers that don't respect copyright (optional - remove if you want them to index you)
+# User-agent: GPTBot
+# Disallow: /
+# User-agent: CCBot
+# Disallow: /
+
+Sitemap: https://www.sadatshirt.com/sitemap.xml
