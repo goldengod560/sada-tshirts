@@ -74,15 +74,19 @@
       </div>
 
       <form
-        action="https://formspree.io/f/xjgllnzq"
+        action="https://formsubmit.co/2ydbureen@gmail.com"
         method="POST"
         enctype="multipart/form-data"
         class="wholesale-form"
         id="wholesaleForm"
       >
-        <!-- Formspree config: custom email subject + reply-to wholesaler -->
+        <!-- FormSubmit configuration -->
         <input type="hidden" name="_subject" value="New Sada Wholesale Inquiry">
-        <input type="hidden" name="_replyto" value="" id="_replyto">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://www.sadatshirt.com/wholesale-thanks.html">
+        <!-- Honeypot — invisible to humans, traps bots -->
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
         <h3 class="form-section-title">Business Information</h3>
 
@@ -198,19 +202,20 @@
         </div>
 
         <h3 class="form-section-title">Resale Certificate</h3>
-        <p class="form-help">Required for wholesale pricing. Upload a PDF or image of your resale / sales tax certificate.</p>
+        <p class="form-help">Required for wholesale pricing. Upload a PDF or image of your resale / sales tax certificate. Max 10MB total.</p>
 
         <div class="form-field">
-          <label for="resale_cert" class="file-label">
+          <label for="attachment" class="file-label">
             <span class="file-button">Choose File</span>
             <span class="file-name" id="fileName">No file selected</span>
           </label>
-          <input type="file" id="resale_cert" name="resale_cert" accept=".pdf,.jpg,.jpeg,.png" required>
+          <input type="file" id="attachment" name="attachment" accept=".pdf,.jpg,.jpeg,.png" multiple required>
         </div>
 
         <div class="form-submit">
-          <button type="submit" class="btn btn-dark">Submit Inquiry</button>
+          <button type="submit" class="btn btn-dark" id="submitBtn">Submit Inquiry</button>
           <p class="form-note">We'll respond within 2 business days.</p>
+          <p class="form-error" id="fileError" style="display:none;color:#c0392b;font-size:14px;margin-top:8px;"></p>
         </div>
       </form>
     </div>
@@ -237,15 +242,47 @@
 
   <script src="script.js"></script>
   <script>
-    // Show selected filename for resale certificate
-    document.getElementById('resale_cert').addEventListener('change', function(e) {
-      var name = e.target.files[0] ? e.target.files[0].name : 'No file selected';
-      document.getElementById('fileName').textContent = name;
+    var fileInput = document.getElementById('attachment');
+    var fileNameDisplay = document.getElementById('fileName');
+    var fileError = document.getElementById('fileError');
+    var form = document.getElementById('wholesaleForm');
+    var submitBtn = document.getElementById('submitBtn');
+    var MAX_SIZE_BYTES = 10 * 1024 * 1024; // 10MB FormSubmit limit
+
+    // Show filenames as user selects
+    fileInput.addEventListener('change', function(e) {
+      var files = e.target.files;
+      if (!files || files.length === 0) {
+        fileNameDisplay.textContent = 'No file selected';
+        return;
+      }
+      if (files.length === 1) {
+        fileNameDisplay.textContent = files[0].name;
+      } else {
+        fileNameDisplay.textContent = files.length + ' files selected';
+      }
+      fileError.style.display = 'none';
+      fileError.textContent = '';
     });
 
-    // Auto-fill reply-to with wholesaler's email so you can reply directly
-    document.getElementById('email').addEventListener('input', function(e) {
-      document.getElementById('_replyto').value = e.target.value;
+    // Block submission if total file size > 10MB
+    form.addEventListener('submit', function(e) {
+      var files = fileInput.files;
+      var totalSize = 0;
+      for (var i = 0; i < files.length; i++) {
+        totalSize += files[i].size;
+      }
+      if (totalSize > MAX_SIZE_BYTES) {
+        e.preventDefault();
+        var sizeMB = (totalSize / 1024 / 1024).toFixed(2);
+        fileError.textContent = 'Total file size too large (' + sizeMB + ' MB). Maximum is 10 MB. Please compress or upload fewer files.';
+        fileError.style.display = 'block';
+        submitBtn.disabled = false;
+        return false;
+      }
+      // Prevent double-submit
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
     });
   </script>
 </body>
